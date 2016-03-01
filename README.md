@@ -5,7 +5,7 @@
   * Introduction and Guidelines
     * [Wiki](https://github.com/bicoom/oom/wiki)
     * [Issues](https://github.com/bicoom/oom/issues)
-  * Setting up the development environment
+  * Setting up your development environment
     * C#
     * Git
   * Hello World
@@ -18,17 +18,16 @@
     * methods
     * fields and properties
     * visibility and encapsulation
-    * lambdas
   * Toolkit
     * web requests
 
 ### [Lesson 3 - Fundamentals II](https://github.com/bicoom/oom/wiki/Lesson-3)
   * Concepts
+    * methods as values
+    * lambda expressions
     * inheritance
     * interfaces
     * polymorphism
-  * Toolkit
-    * package managers (NuGet)
 
 ### [Lesson 4 - Software Quality](https://github.com/bicoom/oom/wiki/Lesson-4)
   * Concepts
@@ -36,8 +35,9 @@
     * unit tests
     * continuous integration [![Build status](https://ci.appveyor.com/api/projects/status/6e5h7fiyhtwdpbce/branch/master?svg=true)](https://ci.appveyor.com/project/bicoom/oom/branch/master)
   * Toolkit
-      * files
-      * serialization (JSON)
+    * package managers (NuGet)
+    * serialization (JSON)
+    * files
       
 ### [Lesson 5 - Code Review](https://github.com/bicoom/oom/wiki/Lesson-5)
   * review of student projects
