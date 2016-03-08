@@ -25,8 +25,8 @@ namespace Task4
 	{
 
 		//Fields public
-		public int m_house_nr;
-		public string m_street;
+		private int m_house_nr;
+		private string m_street;
 
 		//Fields privat
 		private string m_familie_name;
@@ -61,6 +61,27 @@ namespace Task4
 			return m_familie_name;
 		}
 
+
+		public int house_nr
+		{
+
+			get {
+				return m_house_nr;
+			}
+
+		}
+
+
+		public string street
+		{
+
+			get {
+				return m_street;
+			}
+
+		}
+
+
 	}
 
 
@@ -70,8 +91,8 @@ namespace Task4
 	{
 
 		//Fields public
-		public int m_house_nr;
-		public string m_street;
+		private int m_house_nr;
+		private string m_street;
 
 		//Fields privat
 		private string m_familie_name;
@@ -129,6 +150,31 @@ namespace Task4
 		}
 
 
+
+		public int house_nr
+		{
+
+			get {
+				return m_house_nr;
+			}
+
+		}
+
+
+		public string street
+		{
+
+			get {
+				return m_street;
+			}
+
+		}
+
+
+
+
+
+
 	}
 
 
@@ -141,13 +187,13 @@ namespace Task4
 			House myhouse = new House(11,"Hauptstraße","Hummer");
 
 
-			Console.WriteLine ("\n\nHAUS_NR: {0}  STRASSE: {1}  Fam.Name: {2}\n\n",myhouse.m_house_nr,myhouse.m_street,myhouse.getFamilieName());
+			Console.WriteLine ("\n\nHAUS_NR: {0}  STRASSE: {1}  Fam.Name: {2}\n\n",myhouse.house_nr,myhouse.street,myhouse.getFamilieName());
 
 
 			Console.WriteLine ("Fam.Name geaendert auf: {0}",myhouse.setFamilieName("Baglawatsch"));
 
 
-			Console.WriteLine ("\n\nHAUS_NR: {0}  STRASSE: {1}  Fam.Name: {2}\n\n",myhouse.m_house_nr,myhouse.m_street,myhouse.getFamilieName());
+			Console.WriteLine ("\n\nHAUS_NR: {0}  STRASSE: {1}  Fam.Name: {2}\n\n",myhouse.house_nr,myhouse.street,myhouse.getFamilieName());
 
 
 

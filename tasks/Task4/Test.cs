@@ -14,8 +14,8 @@ namespace Task4
 		public void CanCreateHouse()
 		{
 			var x = new House(11,"Hauptstraße","Hummer");
-			Assert.IsTrue(x.m_house_nr == 11);
-			Assert.IsTrue(x.m_street == "Hauptstraße");
+			Assert.IsTrue(x.house_nr == 11);
+			Assert.IsTrue(x.street == "Hauptstraße");
 
 		}
 
@@ -65,8 +65,8 @@ namespace Task4
 		public void CanCreateAdds()
 		{
 			var x = new Adds(11,"Hauptstraße","Hummer","Billa");
-			Assert.IsTrue(x.m_house_nr == 11);
-			Assert.IsTrue(x.m_street == "Hauptstraße");
+			Assert.IsTrue(x.house_nr == 11);
+			Assert.IsTrue(x.street == "Hauptstraße");
 			Assert.IsTrue(x.getFamilieName() == "Hummer");
 			Assert.IsTrue(x.get_adds() == "Billa");
 
