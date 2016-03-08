@@ -4,10 +4,10 @@ using System.Globalization;
 using Newtonsoft.Json;
 using System.IO;
 
+
 namespace Task4
 {
-
-
+	
 
 	public interface ICity
 	{
@@ -205,7 +205,7 @@ namespace Task4
 			add2.get_adds();
 
 
-
+			/*
 			var items = new ICity[]
 			{
 				new House(1,"Hauptstraße","Hummer"),
@@ -215,26 +215,44 @@ namespace Task4
 				new Adds (13, "Bahnstraße", "Hugo", "Billa"),
 
 			};
+			*/
 
 
+			var items2 = new House[]
+			{
+				new House(1,"Hauptstraße","Hummer"),
+				new House(5,"Bahnstraße","Sabeditsch"),
+				new House(14,"Bahnstraße","Sabeditsch"),
+			
+			};
+				
 
+			var settings1 = new JsonSerializerSettings() { Formatting = Formatting.Indented, TypeNameHandling = TypeNameHandling.Auto };
+			Console.WriteLine(JsonConvert.SerializeObject(items2, settings1));
 
-			string json = JsonConvert.SerializeObject(items, Formatting.Indented);
+		
+			//string json = JsonConvert.SerializeObject(items2, settings1);
 
-			Console.WriteLine (json);
+			//Console.WriteLine (json);
 
 
 			// serialize JSON to a string and then write string to a file
-			File.WriteAllText("/Users/gerhard/Downloads/temp_test.txt", JsonConvert.SerializeObject(items));
+			File.WriteAllText("/Users/gerhard/Downloads/temp_test1.txt", JsonConvert.SerializeObject(items2,settings1));
 
 
-			// I'm unable to
-			//var re_items = JsonConvert.DeserializeObject<ICity[]>(File.ReadAllText("/Users/gerhard/Downloads/temp_test.txt"));
 
-			//Console.WriteLine ("{0}", re_items);
+			var textFromFile = File.ReadAllText("/Users/gerhard/Downloads/temp_test1.txt");
+			var re_items = JsonConvert.DeserializeObject<House[]>(textFromFile, settings1);
+
+
+			Console.WriteLine ("\n\n{0}", re_items[0].house_nr);
 
 
 		}
+	
+
+
+	
 	}
 
 
