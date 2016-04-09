@@ -5,6 +5,8 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace Task6
 {
@@ -245,25 +247,42 @@ namespace Task6
 
 
 
-			// Part of Task 6
+			// Part of Task 6.1 
 
+			var w = new Form() { Text = "Push Example", Width = 300, Height = 300 };
 
-			//IObservable<House> test = 
+			var Master = new List<House>();
 
-
-
-
-
+			Master.Add(new House(1, "HH", "ss"));
 
 
 
+			// Rx observables
+			IObservable<Point> moves = Observable.FromEventPattern<MouseEventArgs>(w, "MouseMove").Select(x => x.EventArgs.Location);
+
+			moves
+				.Throttle(TimeSpan.FromSeconds(0.2))
+				.DistinctUntilChanged()
+				.Subscribe(e => System.Console.WriteLine($"Create House({e.X}, Bahnstraße Sabeditsch)"))
+			;
+
+			moves
+				.Throttle(TimeSpan.FromSeconds(0.2))
+				.DistinctUntilChanged()
+				.Subscribe(e => Master.Add(new House(e.X, "Bahnstraße", "Sabeditsch")))
+			;
+
+			Application.Run(w);
+
+
+			foreach (House i in Master)
+			{
+				Console.WriteLine("\n\n{0} {1} {2}", i.house_nr, i.street, i.getFamilieName());
+			}
 
 		}
 
-
-
-
-	}
+}
 
 
 
