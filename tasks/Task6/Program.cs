@@ -280,6 +280,17 @@ namespace Task6
 				Console.WriteLine("\n\n{0} {1} {2}", i.house_nr, i.street, i.getFamilieName());
 			}
 
+		
+
+			//Part of Task 6.2
+			Console.WriteLine("enumerables: foreach (array)");
+			IEnumerable<int> xs = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+			foreach (var x in xs) Console.Write(x + " "); Console.WriteLine();
+
+
+
+
+
 		}
 
 }
